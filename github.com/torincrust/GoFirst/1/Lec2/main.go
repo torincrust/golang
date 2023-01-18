@@ -2,72 +2,87 @@ package main
 
 import (
 	"fmt"
-	"math"
+	//"math"
 )
 
 func main() {
-	//Простейший вывод на косноль. println - это вывод аргумента + '\n'
-	fmt.Println("Hello world", "Hello another")
-	fmt.Println("Second line")
-	//Функция print - простой вывод аргумента
-	fmt.Print("First")
-	fmt.Print("Second")
-	fmt.Print("Third")
-	//Форматированный вывод: Printf - стандартный вывод os.Stdout с флагами форматирования
-	fmt.Printf("\nHello, my name is %s\nMy age is %d\n", "Bob", 42)
-	///////////////////////////////////
-	///////////////////////////////////
-	//Декларирование переменных
-	var age int
-	fmt.Println("My age is:", age)
-	age = 32
-	fmt.Println("Age after assignment:", age)
+	/* // простейший вывод в консоль printl вывод на новую строку +\n
+	fmt.Println("hello world")
+	fmt.Println("second line")
+	// функция принт простой вывод без переносов
+	fmt.Print("first")
+	fmt.Print("sec")
+	fmt.Print("third")
 
-	//Декларирование и инициализация пользовательским значением
-	var height int = 183
-	fmt.Println("My height is:", height)
+	// форматированный вывод Printf - стандартный вывод с флагами форматирвоания на место флага форматирования %s помещается аргумент
+	fmt.Printf("\nhello my name is %s\nMy age is %d\n", "bob", 33)
+	// типо дз  */
+	/* fmt.Println("Привет! Я новый студент!")
+	fmt.Println("Это моя вторая программа! Я рад, что учусь здесь!!") */
 
-	//В чем "полустрогость" типзации? Можно опускать тип переменной
-	var uid = 12345
-	fmt.Println("My uid:", uid)
-	//Декларирование и инициализация переменных одного типа (множественный случай)
-	var firstVar, secondVar = 20, 30
-	fmt.Printf("FirstVar:%d SecondVar:%d\n", firstVar, secondVar)
-	//Декларирвоание блока переменных
-	var (
-		personName string = "Bob"
-		personAge         = 42
-		personUID  int
-	)
+	// декларирование переменных ********************************************************
 
-	fmt.Printf("Name: %s\nAge %d\nUID: %d\n", personName, personAge, personUID)
+	/* 	var age int
+	   	fmt.Println("my age is:", age)
+	   	age = 33
+	   	fmt.Println("age after init:", age) */
 
-	//Немного странного
-	var a, b = 30, "Vova"
-	fmt.Println(a, b)
-	a = 300
-	//Немного хорошего. Повторное декларирование переменной приводит к ошибке компиляции
-	//var a = 200
+	/* 	// дикларирование и инициализация пользовательских значений
+	   	var height int = 123
+	   	fmt.Println("my height:", height)
 
-	//Короткая декларция (корткое объявление)
-	count := 10
-	fmt.Println("Count:", count)
-	count = count + 1
-	fmt.Println("Count:", count)
-	//Множественное присваивание через :=
-	aArg, bArg := 10, 30
-	fmt.Println(aArg, bArg)
-	aArg, bArg = 30, 40
-	fmt.Println(aArg, bArg)
-	// aArg, bArg := 10, 30
-	// fmt.Println(aArg, bArg)
+	   	//в чем полустрогость типизации
+	   	var uid = 1234
+	   	fmt.Println("my uid:", uid)
+	   	fmt.Printf("%T\n", uid) // скажет какой тип данных в переменной
 
-	//Исключение из этого правила
+	   	// Присваивание переменных одного типа множественный случай
+
+	   	var frst, scnd int = 20, 30
+	   	fmt.Println(frst, scnd)
+	   	fmt.Printf("FirstVar:%d, SecondVar:%d\n", frst, scnd)
+
+	   	//декларирование блок переменных
+	   	var (
+	   		name string = "bob"
+	   		age  int    = 31
+
+	   		marriege bool = false
+	   	)
+	   	fmt.Printf("name: %s\nAge: %d\nMarried: %t\n", name, age, marriege)
+	   	var a, b = 30, "bob"
+	   	a = 300
+	   	println(a, b)
+	   	//var a = 300 // повторное декларирование переменной невозможно приводит к ошибки
+
+	   	// короткая декларация (короткое обьявление)
+
+	   	count := 10
+	   	fmt.Println("Count:", count)
+	   	count++
+	   	fmt.Println("Count:", count)
+
+	   	// множественные присваивания через :=
+
+	   	aArg, bArg := 10, 30
+	   	fmt.Println(aArg, bArg)
+	   	// aArg, bArg := 20, "robik" // повторная передекларация приведет к ошибке
+	   	// fmt.Println(aArg, bArg)
+
+	// исключения
+
 	bArg, cArg := 300, 400
-	fmt.Println(aArg, bArg, cArg)
+	fmt.Println(bArg, cArg, aArg) // если хоть одна новая переменная то можно передекларировать */
 
-	//Пример
-	width, length := 20.5, 30.2
-	fmt.Printf("Min dimensional of rectangle is : %.2f\n", math.Min(width, length))
+	// пример
+	/* width, length := 20.5, 30.5
+	fmt.Printf("min dumensional of rectangle is: %.3f\n ", math.Min(width, length)) // %.3f подстановка дробного числа с точностью 3 знака после запятой */
+
+	// задача
+	word1, word2, word3, word4 := "имя", "твое", "мне", "знакомо"
+
+	fmt.Println(word4, word3, word2, word1)
+	fmt.Println(word3, word1, word4, word2)
+	fmt.Println(word2, word4, word1, word3)
 
 }
